@@ -1,15 +1,21 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions {
+  prefix?: string
+  global?: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'stacklab-one-ui',
+    configKey: '@stacklab-one/ui',
   },
   // Default configuration options of the Nuxt module
-  defaults: {},
+  defaults: {
+    global: true,
+    prefix: 'SUI',
+  },
   setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)
 
