@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.4
+
+[compare changes](https://github.com/stacklab-one/ui/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- **ui:** Small fixes ([8048054](https://github.com/stacklab-one/ui/commit/8048054))
+
+### ❤️ Contributors
+
+- Simon Schwedes <simon@schwedes.eu>
+
 ## v0.0.3
 
 [compare changes](https://github.com/stacklab-one/ui/compare/v0.0.2...v0.0.3)
