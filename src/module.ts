@@ -1,4 +1,4 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, installModule, addComponentsDir } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
@@ -14,12 +14,22 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     global: true,
-    prefix: 'SUI',
+    prefix: 'S1',
   },
-  setup(_options, _nuxt) {
-    const resolver = createResolver(import.meta.url)
+  async setup(options, _nuxt) {
+    const { resolve } = createResolver(import.meta.url)
+    const runtimeDir = resolve('./runtime')
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    addPlugin(resolve('./runtime/plugin'))
+
+    await installModule('@nuxtjs/tailwindcss')
+
+    addComponentsDir({
+      path: resolve(runtimeDir, 'components', 'elements'),
+      prefix: options.prefix,
+      global: options.global,
+      watch: false,
+    })
   },
 })

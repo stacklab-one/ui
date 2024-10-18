@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>
+  <button>
     <span>test</span>
-  </div>
+  </button>
 </template>

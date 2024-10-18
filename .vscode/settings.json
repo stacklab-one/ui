@@ -1,3 +1,11 @@
 {
-  "eslint.experimental.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[mjs]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

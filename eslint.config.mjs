@@ -22,6 +22,7 @@ export default createConfigForNuxt({
       rules: {
         // Vue.js
         'vue/multi-word-component-names': 0,
+        'quotes': ['error', 'single'],
       },
     },
   )
